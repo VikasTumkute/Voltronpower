@@ -12,7 +12,7 @@ export default function OilFiltrationPage() {
       {/* Header Section */}
       <header className="header-section">
         <img
-          src="/image/1c88e592-da6a-45aa-b31c-8c161a3c263e.webp"  // Image path in the public folder
+          src="/image/megger1234.jfif"  // Image path in the public folder
           alt="Oil Filtration Service"
           className="service-image"
         />

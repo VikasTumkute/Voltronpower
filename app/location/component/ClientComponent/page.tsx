@@ -1,6 +1,10 @@
+
+"use client";
 import { useState } from "react";
 
 // ClientComponent.tsx
+
+
 export const ClientComponent = () => {
   const [showMap, setShowMap] = useState(false);
 

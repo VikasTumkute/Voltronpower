@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import TransformerDetails from './components/TransformerDetails/page';
 import BookingForm from './components/BookingForm/page';
+import TransformerDetails from './components/TransformerDetails/page';
 //import OilFiltration from './components/OilFiltration/page'; // Importing Oil Filtration sub-component
 
 export default function PowerTransformerPage() {
@@ -12,7 +12,7 @@ export default function PowerTransformerPage() {
     <div className="transformer-page">
       {/* Power Transformer Image */}
       <img
-        src="/images/power-transformer.jpg" // Update with your image path
+        src="/image/delta1234.jfif" // Update with your image path
         alt="Power Transformer"
         className="transformer-image"
       />
