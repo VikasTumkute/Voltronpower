@@ -1,13 +1,10 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 
-interface BookingFormProps {
-  service: string; // The service being booked
-  onClose: () => void; // Callback to close the form
-}
-
-const BookingForm: React.FC<BookingFormProps> = ({ service, onClose }) => {
+// BookingForm Component
+const BookingForm: React.FC<{ service: string; onClose: () => void }> = ({ service, onClose }) => {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const availableTimes = [
@@ -29,14 +26,13 @@ const BookingForm: React.FC<BookingFormProps> = ({ service, onClose }) => {
       return;
     }
     alert(`Booking Confirmed!\nService: ${service}\nDate: ${selectedDate}\nTime: ${selectedTime}`);
-    onClose(); // Close the form after booking
+    onClose();
   };
 
   return (
     <div className="booking-form">
       <h2>Book {service}</h2>
       <form onSubmit={handleSubmit}>
-        {/* Date Picker */}
         <div className="form-group">
           <label htmlFor="date">Select a Date</label>
           <input
@@ -47,8 +43,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ service, onClose }) => {
             required
           />
         </div>
-
-        {/* Time Slots */}
         <div className="form-group">
           <label>Select a Time</label>
           <div className="time-slots">
@@ -64,8 +58,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ service, onClose }) => {
             ))}
           </div>
         </div>
-
-        {/* Submit and Close Buttons */}
         <div className="actions">
           <button type="submit" className="submit-button">
             Confirm Booking
@@ -75,89 +67,22 @@ const BookingForm: React.FC<BookingFormProps> = ({ service, onClose }) => {
           </button>
         </div>
       </form>
-
-      <style jsx>{`
-        .booking-form {
-          max-width: 400px;
-          margin: 0 auto;
-          padding: 20px;
-          background: #f9f9f9;
-          border-radius: 8px;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-          text-align: center;
-          margin-bottom: 20px;
-        }
-        .form-group {
-          margin-bottom: 15px;
-        }
-        label {
-          display: block;
-          margin-bottom: 5px;
-          font-weight: bold;
-        }
-        input {
-          width: 100%;
-          padding: 10px;
-          margin-top: 5px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        }
-        .time-slots {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 10px;
-        }
-        .time-slot {
-          padding: 10px 15px;
-          background: #fff;
-          border: 1px solid #0070f3;
-          border-radius: 4px;
-          color: #0070f3;
-          cursor: pointer;
-          transition: background 0.3s, color 0.3s;
-        }
-        .time-slot:hover {
-          background: #0070f3;
-          color: #fff;
-        }
-        .time-slot.selected {
-          background: #0070f3;
-          color: #fff;
-        }
-        .actions {
-          display: flex;
-          justify-content: space-between;
-          gap: 10px;
-        }
-        .submit-button,
-        .close-button {
-          flex: 1;
-          padding: 10px;
-          border: none;
-          border-radius: 4px;
-          font-size: 16px;
-          cursor: pointer;
-          transition: background 0.3s;
-        }
-        .submit-button {
-          background: #0070f3;
-          color: #fff;
-        }
-        .submit-button:hover {
-          background: #005bb5;
-        }
-        .close-button {
-          background: #f44336;
-          color: #fff;
-        }
-        .close-button:hover {
-          background: #d32f2f;
-        }
-      `}</style>
     </div>
   );
 };
 
-export default BookingForm;
+// Page Component
+const BookingFormPage: React.FC = () => {
+  const router = useRouter();
+
+  const handleClose = () => {
+    router.push('/'); // Navigate to the homepage or previous page
+  };
+
+  return (
+    <BookingForm service="Example Service" onClose={handleClose} />
+  );
+};
+
+export default BookingFormPage;
+
