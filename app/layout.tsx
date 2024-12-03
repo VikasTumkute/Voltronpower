@@ -1,11 +1,7 @@
+'use client';
 import Link from "next/link";
 import React from "react";
 import "./globals.css"; // Import your global CSS or styles
-
-export const metadata = {
-  title: "Voltron Power Consultants",
-  description: "Govt Licensed Class-I Electrical Contractor",
-};
 
 export default function RootLayout({
   children,

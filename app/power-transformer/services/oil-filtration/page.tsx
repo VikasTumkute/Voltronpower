@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import BookingForm from './components/BookingForm';
-
+//import BookingForm from './components/BookingForm/';
+import BookingForm from '@/app/component/bookingform/page';
 export default function OilFiltrationPage() {
   const [showBookingForm, setShowBookingForm] = useState(false);
 

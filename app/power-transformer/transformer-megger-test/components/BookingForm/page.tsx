@@ -1,3 +1,4 @@
+"use client"
 // /components/BookingForm/page.tsx
 import React from 'react';
 

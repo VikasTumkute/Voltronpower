@@ -11,7 +11,7 @@ export default function ThermographyAuditPage() {
     <div className="thermography-audit-page">
       {/* Thermography Audit Image */}
       <img
-        src="/image/thermography1234.jfif" // Replace with your image path
+        src="/image/electrical-thermograpy.jpg" // Replace with your image path
         alt="Electrical Thermography Audit"
         className="thermography-image"
       />

@@ -12,17 +12,17 @@ const ServiceList = () => {
     {
       title: 'Electrical Thermography Audit',
       description: 'Identify and resolve potential issues in your electrical systems with our infrared imaging solutions.',
-      link: '/electrical-thermography Audit',
+      link: '/electrical-thermography',
     },
     {
       title: 'Oil-Filtration',
       description: 'Comprehensive solutions for power transformers, including sales, installation, and maintenance.',
-      link: '/Oil-Filtration',
+      link: '/power-transformer/services/oil-filtration',
     },
     {
       title: 'Transformer-Megger-Test',
       description: 'Comprehensive solutions for power transformers, including sales, installation, and maintenance.',
-      link: '/Transformer-Megger-Test',
+      link: '/power-transformer/transformer-megger-test',
     },
     
   ];
